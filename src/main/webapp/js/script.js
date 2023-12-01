@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("pointForm");
     const mywind = document.getElementById("mywind");
+    const Rwind = document.getElementById("Rwind");
     const r = document.querySelectorAll('.r');
 
     r.forEach(function (checkbox) {
@@ -11,38 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         otherCheckbox.checked = false;
                     }
                 });
-
-                const currentR = checkbox.value; // Получение текущего значения r
-
-                if (currentR !== previousR) {
-                    previousR = currentR;
-                    updateGraf(currentR);
-                }
             }
         });
     });
 
-    // const clearGraphButton = document.getElementById('clearGraph');
-    // const clearResultsButton = document.getElementById('clearResult');
-    //
-    // clearGraphButton.addEventListener('click', clearGraph);
-    // // clearResultsButton.addEventListener('click', clearResultsOnClient);
-    //
-    // function clearGraph() {
-    //     const graphContainer = document.querySelectorAll('circle');
-    //     // Удаление всех точек из графика
-    //     while (graphContainer.firstChild) {
-    //         graphContainer.removeChild(graphContainer.firstChild);
-    //     }
-    // }
-
-    function clearResultsOnClient() {
-        const resultTable = document.getElementById("resultTable");
-        // Удаление всех строк из таблицы
-        while (resultTable.firstChild) {
-            resultTable.removeChild(resultTable.firstChild);
-        }
-    }
 
     const RATIO_X = 50;
     const RATIO_Y = 50;
@@ -53,8 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
     graph.addEventListener("click", function (event) {
         const selectedR = document.querySelector('.r:checked');
         if (!selectedR) {
-            alert("Выберите значение R сначала.");
+            Rwind.style.display = "block"
             return;
+        }else {
+            Rwind.style.display = "none"
         }
         const rValue = selectedR.value;
 
@@ -78,8 +53,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const selectedR = document.querySelector('.r:checked');
         if (!selectedR) {
-            alert("Выберите значение R сначала.");
+            Rwind.style.display = "block"
             return;
+        }else {
+            Rwind.style.display = "none"
         }
         const rValue = selectedR.value;
 
