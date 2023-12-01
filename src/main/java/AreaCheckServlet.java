@@ -46,21 +46,14 @@ public class AreaCheckServlet extends HttpServlet {
 
                     resultList.add(result);
                     servletContext.setAttribute("resultList", resultList);
-//                     Преобразуйте список результатов в JSON
-//                ObjectMapper objectMapper = new ObjectMapper();
-//                String resultListJson = objectMapper.writeValueAsString(resultList);
-//                System.out.println(resultListJson);
-
-//                // Отправьте JSON в ответе
-//                response.setContentType("application/json; charset=UTF-8");
-//                response.getWriter().write(resultListJson);
                     getServletContext().getRequestDispatcher("/result.jsp").include(request, response);
 
                     System.out.println("Updated resultList: " + resultList);
                     response.setStatus(HttpServletResponse.SC_OK);
                 }
             } catch (Exception e) {
-                response.getWriter().write("{\"error\": \"" + e.toString() + "\"}");
+                String errorMessage = "Error occurred: " + e.getMessage();
+                response.getWriter().write("{\"error\": \"" + errorMessage + "\"}");
             }
         }
 
