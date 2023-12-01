@@ -1,5 +1,3 @@
-let previousR = null; // Переменная для хранения предыдущего значения r
-
 function updateGraf(r) {
 
 
@@ -74,41 +72,15 @@ function updateGraf(r) {
     const triangle = document.getElementById('triangle');
     triangle.setAttribute('points', `${200 - (52 * r)},200 200,200 198,${205 + (55 * r)}`);
 
-    // // Обновляем координаты точек
-    // const circles = document.querySelectorAll('circle');
-    // circles.forEach(circle => {
-    //     // Получение текущих координат x и y
-    //     const startX = parseFloat(circle.getAttribute('start-x'));
-    //     const startY = parseFloat(circle.getAttribute('start-y'));
-    //
-    //     // Обновление координат точек в зависимости от начальных значений и нового rValue
-    //     const updatedX = calculateUpdatedX(startX, r);
-    //     const updatedY = calculateUpdatedY(startY, r);
-    //
-    //     // Установка новых координат точек
-    //     circle.setAttribute('cx', updatedX);
-    //     circle.setAttribute('cy', updatedY);
-    // });
 
 }
 
-// function calculateUpdatedX(x, rValue) {
-//     const updatedX = x - ((3 - rValue)/0.5) * 9;
-//     return updatedX;
-// }
-//
-// function calculateUpdatedY(y, rValue) {
-//      const updatedY = y + ((3 - rValue)/0.5) * 9;
-//     return updatedY;
-// }
 
 
 function drawPoints(x, y, rValue) {
 
     // Создание элемента точки
     let circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    // circle.setAttribute('start-x', x);
-    // circle.setAttribute('start-y', y);
 
     circle.setAttribute('cx', x);
     circle.setAttribute('cy', y);
