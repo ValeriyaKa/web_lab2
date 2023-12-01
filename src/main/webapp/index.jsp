@@ -66,7 +66,6 @@
             <!-- Треугольник (Фигура_треугольник) -->
             <polygon id="triangle" points="45,200 200,200 198,370"  fill="#867edc"/>
         </svg>
-<%--        <button class="button3" id="clearGraph" type="click">Очистить график</button>--%>
     </div>
 
     <div id="coordinates-container">
@@ -94,8 +93,8 @@
             <input type="checkbox" class="r" id="r3" name="2" value="2"> 2 </input>
             <input type="checkbox" class="r" id="r4" name="2.5" value="2.5"> 2.5 </input>
             <input type="checkbox" class="r" id="r5" name="3" value="3"> 3 </input>
-
             <br>
+            <span class="wind" id="Rwind">Пожалуйста, выберите значение R.</span>
             <div class="button">
                 <button type="submit">Проверить</button>
                 <span class="wind" id="mywind">Пожалуйста, введите корректные числовые значения для X, Y и R.</span>
